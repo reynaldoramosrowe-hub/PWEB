@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Site de Notícias</title>
+    <style>
+        /* Estilo do corpo da página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #c0392b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Menu de navegação */
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        /* Área das notícias em grid */
+        .noticias {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Cada notícia */
+        .noticia {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .noticia img {
+            width: 100%;
+            height: 150px;
+            background-color: #ddd;
+        }
+
+        .noticia h2 {
+            font-size: 18px;
+            color: #c0392b;
+            margin: 10px 0;
+        }
+
+        .noticia p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Deixa responsivo em telas pequenas */
+        @media (max-width: 700px) {
+            .noticias {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Jornal do Dia </h1>
+        <p>As últimas notícias do Brasil e do mundo</p>
+    </header>
+
+    <!-- Menu -->
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Política</a>
+        <a href="#">Esportes</a>
+        <a href="#">Tecnologia</a>
+        <a href="#">Entretenimento</a>
+    </nav>
+
+    <!-- Grid de notícias -->
+    <div class="noticias">
+
+        <div class="noticia">
+            <img src="https://via.placeholder.com/300x150" alt="Notícia 1">
+            <h2>Nova tecnologia promete internet mais rápida</h2>
+            <p>Pesquisadores anunciaram uma nova forma de transmitir dados que pode dobrar a velocidade da internet atual.</p>
+        </div>
+
+        <div class="noticia">
+            <img src="https://via.placeholder.com/300x150" alt="Notícia 2">
+            <h2>Time brasileiro vence campeonato sul-americano</h2>
+            <p>Em uma final emocionante, a seleção garantiu o título com um gol nos últimos minutos da partida.</p>
+        </div>
+
+        <div class="noticia">
+            <img src="https://via.placeholder.com/300x150" alt="Notícia 3">
+            <h2>Novo filme bate recorde de bilheteria</h2>
+            <p>A produção arrecadou mais de 1 bilhão de dólares em apenas duas semanas de exibição.</p>
+        </div>
+
+        <div class="noticia">
+            <img src="https://via.placeholder.com/300x150" alt="Notícia 4">
+            <h2>Economia cresce no primeiro trimestre</h2>
+            <p>Segundo dados divulgados hoje, o país registrou um crescimento de 2% em relação ao ano passado.</p>
+        </div>
+
+        <div class="noticia">
+            <img src="https://via.placeholder.com/300x150" alt="Notícia 5">
+            <h2>Cientistas descobrem nova espécie de animal</h2>
+            <p>A descoberta foi feita em uma região de floresta ainda pouco explorada por pesquisadores.</p>
+        </div>
+
+        <div class="noticia">
+            <img src="https://via.placeholder.com/300x150" alt="Notícia 6">
+            <h2>Festival de música reúne milhares de pessoas</h2>
+            <p>O evento aconteceu no último fim de semana e contou com shows de grandes artistas nacionais.</p>
+        </div>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p></p>
+    </footer>
+
+</body>
+</html>
