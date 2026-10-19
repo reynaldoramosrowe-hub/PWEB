@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedra, Papel ou Tesoura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .resultado {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .placar {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pedra, Papel ou Tesoura</h1>
+  <p>Escolha uma opção:</p>
+
+  <button onclick="jogar('pedra')">Pedra</button>
+  <button onclick="jogar('papel')">Papel</button>
+  <button onclick="jogar('tesoura')">Tesoura</button>
+
+  <div class="resultado" id="resultado"></div>
+  <div class="placar" id="placar"></div>
+
+  <button onclick="reiniciar()">Reiniciar</button>
+
+  <script>
+    var vitorias = 0;
+    var derrotas = 0;
+    var empates = 0;
+
+    function jogar(escolhaJogador) {
+      var opcoes = ["pedra", "papel", "tesoura"];
+      var indice = Math.floor(Math.random() * 3);
+      var escolhaComputador = opcoes[indice];
+
+      var mensagem = "";
+
+      if (escolhaJogador === escolhaComputador) {
+        mensagem = "Empate! Os dois escolheram " + escolhaJogador + ".";
+        empates++;
+      } else if (
+        (escolhaJogador === "pedra" && escolhaComputador === "tesoura") ||
+        (escolhaJogador === "tesoura" && escolhaComputador === "papel") ||
+        (escolhaJogador === "papel" && escolhaComputador === "pedra")
+      ) {
+        mensagem = "Você escolheu " + escolhaJogador + " e o computador escolheu " + escolhaComputador + ". Você ganhou!";
+        vitorias++;
+      } else {
+        mensagem = "Você escolheu " + escolhaJogador + " e o computador escolheu " + escolhaComputador + ". O computador ganhou!";
+        derrotas++;
+      }
+
+      document.getElementById("resultado").innerHTML = mensagem;
+      document.getElementById("placar").innerHTML =
+        "Você: " + vitorias + " | Empates: " + empates + " | Computador: " + derrotas;
+    }
+
+    function reiniciar() {
+      vitorias = 0;
+      derrotas = 0;
+      empates = 0;
+      document.getElementById("resultado").innerHTML = "";
+      document.getElementById("placar").innerHTML = "";
+    }
+  </script>
+
+</body>
+</html>
