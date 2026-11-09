@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funções em JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 640px; margin: 24px auto; padding: 0 12px; }
+    fieldset { margin-bottom: 16px; border-radius: 6px; }
+    input { margin: 4px 4px 4px 0; padding: 4px; }
+    button { padding: 5px 12px; cursor: pointer; }
+    .res { font-weight: bold; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Funções em JavaScript</h1>
+
+  <fieldset>
+    <legend>1) Maior de três números</legend>
+    <input type="number" id="a1"> <input type="number" id="b1"> <input type="number" id="c1">
+    <button onclick="testar1()">Calcular</button>
+    <div class="res" id="r1"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>2) Ordem crescente</legend>
+    <input type="number" id="a2"> <input type="number" id="b2"> <input type="number" id="c2">
+    <button onclick="testar2()">Ordenar</button>
+    <div class="res" id="r2"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>3) Palíndromo</legend>
+    <input type="text" id="t3" placeholder="ex.: Socorram me subi no onibus em Marrocos">
+    <button onclick="testar3()">Verificar</button>
+    <div class="res" id="r3"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>4) Subconjunto</legend>
+    <input type="text" id="p1" placeholder="Palavra 1"> <input type="text" id="p2" placeholder="Palavra 2">
+    <button onclick="testar4()">Verificar</button>
+    <div class="res" id="r4"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>5) Dia da semana</legend>
+    <input type="date" id="d5">
+    <button onclick="testar5()">Descobrir</button>
+    <div class="res" id="r5"></div>
+  </fieldset>
+
+  <!-- Arquivo JS externo com as 5 funções -->
+  <script src="funcoes.js"></script>
+
+  <script>
+    const v = (id) => document.getElementById(id).value;
+    const n = (id) => Number(v(id));
+
+    function testar1() {
+      document.getElementById("r1").textContent =
+        "Maior: " + maiorDeTres(n("a1"), n("b1"), n("c1"));
+    }
+    function testar2() {
+      document.getElementById("r2").textContent =
+        "Crescente: " + ordemCrescente(n("a2"), n("b2"), n("c2")).join(", ");
+    }
+    function testar3() {
+      document.getElementById("r3").textContent = ehPalindromo(v("t3"));
+    }
+    function testar4() {
+      document.getElementById("r4").textContent = verificaSubconjunto(v("p1"), v("p2"));
+    }
+    function testar5() {
+      document.getElementById("r5").textContent = diaDaSemana(v("d5"));
+    }
+  </script>
+</body>
+</html>
